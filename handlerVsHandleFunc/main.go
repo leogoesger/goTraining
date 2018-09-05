@@ -30,8 +30,10 @@ func cat(res http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	//HandleFunc take a function
-	http.HandleFunc("/leo", cat)
-	//using nil will use DefaultServerMux
+	// Use handle instead of http.HandlerFunc
+	http.Handle("/leo", http.HandlerFunc(cat))
+
+	// User HandleFunc
+	// http.HandleFunc("/leo", cat)
 	http.ListenAndServe(":8080", nil)
 }
