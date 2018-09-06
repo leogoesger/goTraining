@@ -21,7 +21,7 @@ func cat(res http.ResponseWriter, req *http.Request) {
 	profile := Profile{"Alex", []string{"snowboarding", "programming"}}
 	js, err := json.Marshal(profile)
 	if err != nil {
-		log.Fatalf("json failed")
+		log.Fatalf("json faileddd")
 	}
 
 	fmt.Println(string(js))
